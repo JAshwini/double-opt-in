@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+			flex-wrap: wrap;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+			width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+
+        div {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="download_asset.php" method="post">
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" title="Ten-digit phone number">
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" name="country" required>
+				<option value="Poland">Poland</option>
+				<option value="Czech Republic">Czech Republic</option>
+				<option value="Greece">Greece</option>
+				<option value="Hungary">Hungary</option>
+				<option value="Slovakia">Slovakia</option>
+				<option value="Romania">Romania</option>
+				<option value="Switzerland">Switzerland</option>
+            </select>
+        </div>
+        <div>
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" name="zip" pattern="[0-9]*" title="Zip Code should only contain numbers.">
+        </div>
+		<div>
+			<label>
+				<input type="checkbox" id="marketingOptIn" name="marketingOptIn">
+				Yes, I would like to hear about upcoming events, products, and services from The client, and I agree to share my information with The client for that purpose.
+			</label>
+		</div>
+        <div>
+            <button type="submit">Download asset</button>
+        </div>
+    </form>
+</body>
+</html>
